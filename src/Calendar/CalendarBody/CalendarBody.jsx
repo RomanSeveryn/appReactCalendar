@@ -27,7 +27,9 @@ const CalendarBody = (props) => {
           <DaysOfWeek />
         </thead>
         <tbody>
-          <Month year={2021} month={1}/>
+
+          <Month year={2021} month={1} week={6}/>
+
         </tbody>
       </table>
     </div>

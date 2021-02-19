@@ -1,16 +1,26 @@
 import React from "react";
 import Week from "../Week/Week";
+import { addWeeks, startOfMonth, parse } from "date-fns";
 
 const Month = (props) => {
-  const {year, month} = props;
-  
+  const { year, month, week } = props;
+
+  const startMonth = parse(`${year} ${month}`, "y M", new Date());
+
+  console.log(startMonth)
+  const buildMonth = () =>
+    new Array(6).fill(1).map((_, index) => {
+      return (
+        <Week
+          key={`${year}-${month}-${week}`}
+          week={addWeeks(startMonth, index)}
+        />
+      )
+    })
   //чтобы 
   return (
     <>
-      <Week year={2021} week={2} />
-      <Week year={2021} week={3} />
-      <Week year={2021} week={4} />
-      <Week year={2021} week={5} />
+      {buildMonth()}
     </>
   );
 };
