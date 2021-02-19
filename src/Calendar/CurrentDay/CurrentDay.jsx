@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { format } from "date-fns";
-import styles from './CurrentDay.module.css';
+import styles from './CurrentDay.module.scss';
 const CurrentDay = (props) => {
   const { currentDay } = props;
   return (
