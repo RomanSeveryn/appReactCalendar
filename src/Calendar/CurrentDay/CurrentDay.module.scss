@@ -1,4 +1,8 @@
 .containerCurrentDay {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   width: 500px;
   height: 500px;
   background-color: #38CEC4;
@@ -7,14 +11,12 @@
 .dayOfMonth {
   color: white;
   font-size: 230px;
-  text-align: center;
+  font-weight: 300;
 }
 
 
 .dayOfWeek {
   color: white;
   font-size: 30px;
-  text-align: center;
-  padding-top: 70px;
-  padding-bottom: 40px;
+  text-transform: uppercase;
 }

@@ -5,9 +5,9 @@ import { addWeeks, startOfMonth, parse } from "date-fns";
 const Month = (props) => {
   const { year, month, week } = props;
 
-  const startMonth = parse(`${year} ${month}`, "y M", new Date());
+  const startMonth = parse(`${year} ${month + 1}`, "y M", new Date());
 
-  console.log(startMonth)
+  console.log(startMonth);
   const buildMonth = () =>
     new Array(6).fill(1).map((_, index) => {
       return (
@@ -15,14 +15,10 @@ const Month = (props) => {
           key={`${year}-${month}-${week}`}
           week={addWeeks(startMonth, index)}
         />
-      )
-    })
-  //чтобы 
-  return (
-    <>
-      {buildMonth()}
-    </>
-  );
+      );
+    });
+
+  return <>{buildMonth()}</>;
 };
 
 export default Month;
